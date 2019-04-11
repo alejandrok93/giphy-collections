@@ -166,7 +166,6 @@ class App extends React.Component<{}, AppState> {
 			//Format search query
 			input = input.replace(/ /g, '+');
 			giphy_search_url = giphy_search_url + input;
-			console.log(giphy_search_url);
 
 			axios
 				.get(giphy_search_url)
@@ -214,7 +213,7 @@ class App extends React.Component<{}, AppState> {
 	};
 	render() {
 		const empty = this.state.items.length === 0 ? true : false;
-		console.log(empty);
+
 		return (
 			<AppPageContainer>
 				<AppHeader>

@@ -33,8 +33,6 @@ const Collection = (props: CollectionProps) => {
 	}
 	const number_of_items = items.length;
 
-	console.log(props);
-
 	return connectDropTarget(
 		<div
 			onClick={e => {
