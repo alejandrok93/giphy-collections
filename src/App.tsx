@@ -160,7 +160,7 @@ class App extends React.Component<{}, AppState> {
 	};
 	handleSearch = (input: string) => {
 		//Declare GIPHY Search URL
-		let giphy_search_url = `http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=`;
+		let giphy_search_url = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=`;
 
 		if (input.length > 0) {
 			//Format search query
