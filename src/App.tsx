@@ -23,7 +23,6 @@ const AppPageContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	min-height: 100vh;
 	max-width: ${maxAppWidth}px;
 	margin-right: auto;
 	margin-left: auto;
@@ -75,7 +74,7 @@ const Page = styled.div`
 	display: flex;
 	flex-direction: row;
 	@media (max-width: 768px) {
-		padding: ${rhythm(1)}px ${gutter}px;
+		// padding: ${rhythm(1)}px ${gutter}px;
 	}
 `;
 
