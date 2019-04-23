@@ -45,7 +45,10 @@ const Result = (props: ResultProps) => {
 	return connectDragSource(
 		<div className="item" style={{ opacity }}>
 			<img src={img_url} alt={item.title} />
-			{/* <input type="text" value={item.bitly_gif_url} id="gif-url" /> */}
+			<div className="gif-share">
+				<input type="text" value={item.bitly_gif_url} id="gif-url" />
+				<a href="#">Copy</a>
+			</div>
 		</div>
 	);
 };

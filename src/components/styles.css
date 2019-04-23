@@ -69,3 +69,25 @@
 	background-color: skyblue;
 	border: 1px solid black;
 }
+
+.gif-share {
+	background-color: lightgray;
+	min-height: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.gif-share input {
+	background-color: lightgray;
+	margin-left: 20px;
+	border: none;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 14px;
+}
+
+.gif-share a {
+	text-decoration: none;
+	color: blue;
+	margin: 15px;
+}
