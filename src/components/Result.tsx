@@ -7,7 +7,6 @@ import './styles.css';
 //Declare spec function that includes available methods
 const resultSource = {
 	beginDrag(props: any) {
-		console.log('dragging item..');
 		return props.item;
 	},
 	endDrag(props: any, monitor: any, component: React.Component) {
@@ -47,7 +46,12 @@ const Result = (props: ResultProps) => {
 		<div className="item" style={{ opacity }}>
 			<img src={img_url} alt={item.title} />
 			<div className="gif-share">
-				<input type="text" value={item.bitly_gif_url} id="gif-url" />
+				<input
+					readOnly={true}
+					type="text"
+					value={item.bitly_gif_url}
+					id="gif-url"
+				/>
 				<a onClick={e => props.copyURL(item.bitly_gif_url)} href="#">
 					Copy
 				</a>
