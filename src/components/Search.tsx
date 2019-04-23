@@ -17,13 +17,13 @@ class Search extends React.Component<SearchProps, SearchState> {
 		this.state = { input: '' };
 	}
 
+	delayedSearch = _.debounce(this.props.handleSearch, 1000);
+
 	handleChange = (e: any) => {
 		//Use debounce function to efficiently search as user is typing
 		let input = e.target.value;
 
-		let delayedSearch = _.debounce(this.props.handleSearch, 1000);
-
-		this.setState({ ...this.state, input }, delayedSearch(input));
+		this.setState({ ...this.state, input }, () => this.delayedSearch(input));
 	};
 
 	onSubmit = (e: any) => {
