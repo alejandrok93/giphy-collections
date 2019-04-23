@@ -7,6 +7,7 @@ import { rhythm, column, gutter, DarkGray, maxAppWidth } from './lib';
 import { sofiLogo, reactLogo } from './images';
 import { GiphyGifObject } from './types/giphyApi';
 import { Collection as CollectionType } from './types/collection';
+import { Navigator as NavigatorType } from './types/navigator';
 import axios from 'axios';
 
 const mockResponse = require('./__tests__/mockGiphyApiResponse.json');
@@ -157,6 +158,7 @@ class App extends React.Component<{}, AppState> {
 		//Update state
 		this.setState({ collections });
 	};
+
 	handleSearch = (input: string) => {
 		//Declare GIPHY Search URL
 		let giphy_search_url = `https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=`;
@@ -210,6 +212,16 @@ class App extends React.Component<{}, AppState> {
 			this.setState({ displayItemsInCollection: true, items, collections });
 		}
 	};
+
+	copyURL = (url: string) => {
+		console.log(url);
+		console.log(Navigator);
+		console.log(navigator);
+		// navigator
+		// 	.writeText(url)
+		// 	.then(response => console.log(response))
+		// 	.catch(err => console.log(err));
+	};
 	render() {
 		const empty = this.state.items.length === 0 ? true : false;
 
@@ -246,7 +258,12 @@ class App extends React.Component<{}, AppState> {
 						{empty ? <EmptyContainer>Search for GIFs!</EmptyContainer> : ''}
 						<GiphyContainer>
 							{this.state.items.map(item => (
-								<Result key={item.id} item={item} handleDrop={this.addItem} />
+								<Result
+									key={item.id}
+									item={item}
+									handleDrop={this.addItem}
+									copyURL={this.copyURL}
+								/>
 							))}
 						</GiphyContainer>
 					</GiphyApp>

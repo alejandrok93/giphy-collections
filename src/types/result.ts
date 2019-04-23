@@ -7,4 +7,5 @@ export interface ResultProps {
 	connectDragSource: (component: React.ReactNode) => any;
 	isDragging: boolean;
 	handleDrop: (item: GiphyGifObject, collection_id: number) => any;
+	copyURL: (url: string) => any;
 }

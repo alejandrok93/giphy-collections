@@ -33,6 +33,7 @@ function collect(connect: any, monitor: any) {
 		isDragging: monitor.isDragging()
 	};
 }
+
 const Result = (props: ResultProps) => {
 	const { isDragging, connectDragSource, item } = props;
 	let img_url = '';
@@ -47,7 +48,9 @@ const Result = (props: ResultProps) => {
 			<img src={img_url} alt={item.title} />
 			<div className="gif-share">
 				<input type="text" value={item.bitly_gif_url} id="gif-url" />
-				<a href="#">Copy</a>
+				<a onClick={e => props.copyURL(item.bitly_gif_url)} href="#">
+					Copy
+				</a>
 			</div>
 		</div>
 	);
