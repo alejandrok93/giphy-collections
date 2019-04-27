@@ -43,7 +43,9 @@ const Collection = (props: CollectionProps) => {
 		>
 			<p className="collection-name">{name}</p>
 			<span className="number-of-items">{number_of_items}</span>
-			<span className="delete">delete</span>
+			<span style={{ display: 'none' }} className="delete">
+				delete
+			</span>
 		</div>
 	);
 };
