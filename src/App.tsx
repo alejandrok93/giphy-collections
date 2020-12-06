@@ -120,6 +120,12 @@ const EmptyContainer = styled.div`
 	width: 450px;
 `;
 
+const GiphyLogo = styled.img`
+	padding: 5px;
+	width: 50px;
+	height: 50px;
+`;
+
 interface AppState {
 	displayItemsInCollection: boolean;
 	items: Array<GiphyGifObject>;
@@ -158,6 +164,7 @@ class App extends React.Component<{}, AppState> {
 		//Update state
 		this.setState({ collections });
 	};
+
 
 	handleSearch = (input: string) => {
 		//Declare GIPHY Search URL
@@ -222,15 +229,14 @@ class App extends React.Component<{}, AppState> {
 		// 	.then(response => console.log(response))
 		// 	.catch(err => console.log(err));
 	};
+
 	render() {
 		const empty = this.state.items.length === 0 ? true : false;
 
 		return (
 			<AppPageContainer>
 				<AppHeader>
-					<a href="/">
-						<img src={giphyLogo} alt="Giphy logo" />
-					</a>
+						<GiphyLogo src={giphyLogo} alt="Giphy logo" />
 					<img
 						src={reactLogo}
 						className="react-logo-animation"
@@ -255,7 +261,7 @@ class App extends React.Component<{}, AppState> {
 						<SearchContainer>
 							<Search handleSearch={this.handleSearch} />
 						</SearchContainer>
-						{empty ? <EmptyContainer>Search for GIFs!</EmptyContainer> : ''}
+						{ empty ? <EmptyContainer>Search for GIFs!</EmptyContainer> : '' }
 						<GiphyContainer>
 							{this.state.items.map(item => (
 								<Result
