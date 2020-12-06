@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DragDropContext, DragSource, DropTarget } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import { rhythm, column, gutter, DarkGray, maxAppWidth } from './lib';
-import { sofiLogo, reactLogo } from './images';
+import { giphyLogo, reactLogo } from './images';
 import { GiphyGifObject } from './types/giphyApi';
 import { Collection as CollectionType } from './types/collection';
 import { Navigator as NavigatorType } from './types/navigator';
@@ -229,7 +229,7 @@ class App extends React.Component<{}, AppState> {
 			<AppPageContainer>
 				<AppHeader>
 					<a href="/">
-						<img src={sofiLogo} alt="SoFi logo" />
+						<img src={giphyLogo} alt="Giphy logo" />
 					</a>
 					<img
 						src={reactLogo}
